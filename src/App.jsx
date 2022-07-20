@@ -1,4 +1,4 @@
-import Post from './Post'
+import Post from './components/post/Post'
 import Header from './components/header/Header'
 import Sidebar from './components/sidebar/Sidebar'
 import styles from './App.module.css'
@@ -10,11 +10,12 @@ function App() {
     <>
       <Header />
       <div className={styles.wrapper}>
-        <aside><Sidebar /></aside>
+        <aside>
+          <Sidebar />
+        </aside>
         <main>
-          <Post author="Lorem ipsum" content="Veniam commodo aute occaecat reprehenderit aliqua est amet elit sunt." />
-
-          <Post author="Lorem ipsum" content="Veniam commodo aute occaecat reprehenderit aliqua est amet elit sunt." />
+          <Post />
+          <Post />
         </main>
       </div>
 
