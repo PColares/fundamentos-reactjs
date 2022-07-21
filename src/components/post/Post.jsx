@@ -42,13 +42,13 @@ function Post({ author, publishedAt, content }) {
             </header>
 
             <div className={styles.content}>
-                {content.map(line => {
+                {content.map((line) => {
                     if (line.type === 'paragraph') {
-                        return <p>{line.content}</p>
+                        return <p key={line.content}>{line.content}</p>
                     } else if (line.type === 'link') {
-                        return <p><a href="#">{line.content}</a></p>
+                        return <p key={line.content}><a href="#">{line.content}</a></p>
                     } else if (line.type === 'hashtag') {
-                        return <a href="#">{line.content}</a>
+                        return <a key={line.content} href="#">{line.content}</a>
                     }
                 })}
             </div>
@@ -67,7 +67,7 @@ function Post({ author, publishedAt, content }) {
             </form>
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment content={comment} />
+                    return <Comment key={comment} content={comment} />
                 })}
             </div>
         </article>
